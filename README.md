@@ -9,3 +9,4 @@ Build IOS:
 - "npm i" 
 - "cd ios" and "pod install" (You will need CocoaPods)
 - "react-native link" on les past
+- After this, just play on Xcode Simulator. 
