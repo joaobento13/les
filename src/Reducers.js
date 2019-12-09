@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
-import firstReducer from "./reducers/firstReducer";
+import ConfigReducer from "./reducers/ConfigReducer";
 
 
 export default combineReducers({
-  firstReducer: firstReducer
+  ConfigReducer: ConfigReducer
 });

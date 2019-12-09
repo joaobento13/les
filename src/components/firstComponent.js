@@ -1,13 +1,47 @@
 import React, { Component } from 'react'
-import { Text, View, SafeAreaView } from 'react-native'
+import { View, Image, StyleSheet } from 'react-native'
+import { connect } from "react-redux"
 
-export default class firstComponent extends Component {
+const imageBGLogin = require("../assets/bmw.jpg")
+
+class FirstComponent extends Component {
+    componentWillMount() {
+        const { navigate } = this.props.navigation;
+        if (this.props.login) {
+        } else {
+            navigate('Login')
+        }
+    }
+
     render() {
         return (
-            <View>
-                <SafeAreaView />
-                <Text> teste </Text>
+            <View style={{ flex: 1 }}>
+                <View>
+                    <Image
+                        style={styles.imageBackGround}
+                        source={imageBGLogin}
+                    />
+                </View>
             </View>
-        )
+        );
     }
 }
+
+const styles = StyleSheet.create({
+    imageBackGround: {
+        width: 1100,
+        height: 713
+    }
+})
+
+const mapStateToProps = state => {
+    return {
+        login: state.ConfigReducer.login
+    };
+};
+
+export default connect(
+    mapStateToProps,
+    {
+    }
+)(FirstComponent);
